@@ -22,7 +22,7 @@ __device__ float GS_star(curandState *state, float alpha) {
             return x;
         }
     }
-    return 0.0; // Indicate failure or retry logic should be applied
+    return 0.0;
     }
     
     
@@ -39,16 +39,15 @@ __device__ float GKM1(curandState *state, float alpha) {
         y = curand_uniform(state);
         x = curand_uniform(state);
         v = b * y / x;
-        // Simplification of the accept/reject condition
         if (v+1/v + -d + m*x<= 0) {
             break;
         }
         if (m*logf(x)- log(v)+v-1 <= 0) {
             break;
         }
-    }; // This condition is just a placeholder
+    }; 
 
-    return a * v; // The actual GKM method will have a more complex calculation
+    return a * v; 
 }
 
 __device__ float GKM2( curandState *state , float alpha) {
@@ -76,9 +75,9 @@ __device__ float GKM2( curandState *state , float alpha) {
         if (m*logf(x_prime)- log(v)+v-1 <= 0) {
             break;
         }
-    }; // This condition is just a placeholder
+    };
 
-    return a * v; // The actual GKM method will have a more complex calculation
+    return a * v;
 
 
 }
