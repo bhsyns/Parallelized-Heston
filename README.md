@@ -1,4 +1,4 @@
-# Compte Rendu: Heston Model and Sampling from $\chi^2$ Law
+# Using Parallelization for Heston Model and Sampling from $\chi^2$ Law
 
 ## The Heston Model
 
